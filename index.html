@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra de César</title>
+    <script>
+
+        var frase = "";
+        var letra = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var frase = prompt("Digite a frase:").toLowerCase();
+        var posicao = prompt("Digite quantas posições a frente você deseja que a letra seja substituída:");
+        var posicaoInt = parseInt(posicao);
+        var vetor = [];
+
+        //uma matriz
+        for (var i = 0; i < frase.length; i++) {
+            if (frase[i] != ' ') {
+                for (var j = 0; j < letra.length; j++) {
+                    if (frase[i] == letra[j]) {
+                        vetor[i] = letra[(j + posicaoInt) % letra.length];
+                        break;
+                    }
+                }
+            }
+            else {
+                vetor[i] = ' ';
+            }
+        }
+        alert(vetor.join(""));
+
+    </script>
+</head>
+
+<body>
+        <h1>Cifra de César</h1>
+
+</body>
+
+</html>
